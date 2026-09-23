@@ -29,6 +29,7 @@ class InfoEndpoint(RestEndpoint):
             "developer_mode": self._ledfx.config["dev_mode"],
             "features": {
                 "sendspin": SENDSPIN_AVAILABLE,
+                "snapcast": True,
             },
         }
         return await self.bare_request_success(response)

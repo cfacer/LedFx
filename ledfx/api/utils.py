@@ -60,6 +60,7 @@ PERMITTED_KEYS = {
         "lifx_broadcast_address",
         "lifx_discovery_timeout",
         "sendspin_always_on",
+        "snapcast_always_on",
     ),
 }
 

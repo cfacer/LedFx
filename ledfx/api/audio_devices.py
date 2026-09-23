@@ -86,4 +86,12 @@ class AudioDevicesEndpoint(RestEndpoint):
             config_dir=self._ledfx.config_dir,
         )
 
+        # Network sources with always-on start even with no active effects
+        for reconcile in (
+            "reconcile_sendspin_always_on_runtime",
+            "reconcile_snapcast_always_on_runtime",
+        ):
+            if hasattr(self._ledfx, reconcile):
+                getattr(self._ledfx, reconcile)("audio_device_selected")
+
         return await self.request_success()

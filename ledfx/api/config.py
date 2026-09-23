@@ -285,6 +285,10 @@ class ConfigEndpoint(RestEndpoint):
                 self._ledfx.reconcile_sendspin_always_on_runtime(
                     "audio_config_updated"
                 )
+            if hasattr(self._ledfx, "reconcile_snapcast_always_on_runtime"):
+                self._ledfx.reconcile_snapcast_always_on_runtime(
+                    "audio_config_updated"
+                )
 
         if hasattr(self._ledfx, "audio") and melbanks_config:
             self._ledfx.audio.melbanks.update_config(
